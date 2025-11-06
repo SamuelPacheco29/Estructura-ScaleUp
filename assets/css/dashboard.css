@@ -1,0 +1,115 @@
+/* ===== ESTILOS ESPECÍFICOS DEL DASHBOARD - DEPURADO ===== */
+
+/* Grid del dashboard */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: var(--espacio-lg);
+    width: 100%;
+}
+
+/* Lista de productos */
+.lista-productos, .alerta-lista {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-md);
+}
+
+.item-producto, .alerta-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espacio-md);
+    background: var(--fondo-gris-claro);
+    border-radius: var(--radio-sm);
+    border-left: 4px solid var(--info);
+    transition: all 0.2s ease;
+}
+
+.item-producto:hover, .alerta-item:hover {
+    background: var(--fondo-gris);
+    transform: translateX(2px);
+}
+
+.producto-info, .alerta-info {
+    flex: 1;
+}
+
+.producto-info h4, .alerta-info h4 {
+    color: var(--texto-oscuro);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.producto-categoria, .alerta-categoria {
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.estadisticas-productos, .alerta-stock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+}
+
+.stock {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.stock.bajo, .stock-critico {
+    color: var(--peligro);
+}
+
+.precio {
+    color: var(--exito);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.alerta-monto {
+    background: var(--exito);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radio-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Enlaces de ver todo */
+.ver-todo {
+    color: var(--primario);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.ver-todo:hover {
+    text-decoration: underline;
+    color: var(--primario-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contenedor-acciones {
+        flex-direction: column;
+    }
+    
+    .item-producto, .alerta-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--espacio-sm);
+    }
+    
+    .estadisticas-productos, .alerta-stock {
+        align-items: flex-start;
+    }
+}

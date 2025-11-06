@@ -1,0 +1,177 @@
+/* ===== ESTILOS ESPECÍFICOS DE PRODUCTOS - DEPURADO ===== */
+
+/* Badges de estado - Unificados */
+.badge-stock, .insignia-stock {
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radio-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-stock.alto, .insignia-stock.bien {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-stock.medio, .insignia-stock.medio {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.badge-stock.bajo, .insignia-stock.critico {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Precios */
+.precio {
+    font-weight: 600;
+    color: var(--exito);
+}
+
+.precio::before {
+    content: "$";
+    margin-right: 0.25rem;
+}
+
+/* Acciones de productos */
+.acciones-producto {
+    display: flex;
+    gap: var(--espacio-sm);
+    align-items: center;
+}
+
+.btn-accion-producto, .btn-actualizar, .btn-eliminar {
+    padding: var(--espacio-xs) var(--espacio-sm);
+    border: none;
+    border-radius: var(--radio-sm);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.btn-ver {
+    background: var(--info);
+    color: white;
+}
+
+.btn-ver:hover {
+    background: #3a7bd5;
+    transform: translateY(-1px);
+}
+
+.btn-editar, .btn-actualizar {
+    background: var(--advertencia);
+    color: #212529;
+}
+
+.btn-editar:hover, .btn-actualizar:hover {
+    background: #e0a800;
+    transform: translateY(-1px);
+}
+
+.btn-eliminar {
+    background: var(--peligro);
+    color: white;
+}
+
+.btn-eliminar:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Filtros de productos */
+.filtros-productos, .seccion-filtros {
+    background: white;
+    padding: var(--espacio-lg);
+    border-radius: var(--radio-md);
+    box-shadow: var(--sombra-suave);
+    margin-bottom: var(--espacio-lg);
+    border: 1px solid var(--borde-claro);
+}
+
+.filtro-grupo, .grupo-filtro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-xs);
+    min-width: 200px;
+}
+
+.filtro-grupo label, .grupo-filtro label {
+    font-weight: 600;
+    color: var(--texto-oscuro);
+    font-size: 0.9rem;
+}
+
+.filtro-grupo input, .filtro-grupo select,
+.grupo-filtro input, .grupo-filtro select {
+    padding: var(--espacio-sm) var(--espacio-md);
+    border: 1px solid var(--borde-gris);
+    border-radius: var(--radio-sm);
+    font-size: 0.9rem;
+}
+
+/* Paginación */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espacio-sm);
+    margin-top: var(--espacio-lg);
+}
+
+.pagina-item {
+    padding: var(--espacio-sm) var(--espacio-md);
+    border: 1px solid var(--borde-gris);
+    border-radius: var(--radio-sm);
+    text-decoration: none;
+    color: var(--texto-principal);
+    transition: all 0.3s ease;
+}
+
+.pagina-item:hover {
+    background: var(--fondo-gris-claro);
+    border-color: var(--primario);
+}
+
+.pagina-item.activa {
+    background: var(--primario);
+    color: white;
+    border-color: var(--primario);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tabla-productos {
+        font-size: 0.9rem;
+    }
+    
+    .tabla-productos th,
+    .tabla-productos td {
+        padding: var(--espacio-sm);
+    }
+    
+    .acciones-producto {
+        flex-direction: column;
+        gap: var(--espacio-xs);
+    }
+    
+    .filtros-productos, .seccion-filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filtro-grupo, .grupo-filtro {
+        min-width: auto;
+    }
+    
+    .paginacion {
+        flex-wrap: wrap;
+    }
+}

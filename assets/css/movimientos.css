@@ -1,0 +1,465 @@
+/* ===== ESTILOS ESPECÍFICOS DE MOVIMIENTOS - DEPURADO ===== */
+
+/* Tablas de movimientos - Optimizadas */
+.tabla-info, .tabla-movimientos {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: var(--radio-md);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid var(--borde-claro);
+}
+
+.tabla-info th, .tabla-movimientos th {
+    background: var(--fondo-gris-claro);
+    color: var(--texto-oscuro);
+    font-weight: 600;
+    padding: var(--espacio-sm) var(--espacio-md);
+    text-align: left;
+    border-bottom: 2px solid var(--borde-gris);
+    font-size: 0.9rem;
+}
+
+.tabla-info td, .tabla-movimientos td {
+    padding: var(--espacio-sm) var(--espacio-md);
+    border-bottom: 1px solid var(--borde-claro);
+    font-size: 0.9rem;
+}
+
+.tabla-info tbody tr:hover, .tabla-movimientos tbody tr:hover {
+    background: var(--fondo-gris-claro);
+}
+
+.tabla-responsive {
+    overflow-x: auto;
+    width: 100%;
+    border-radius: var(--radio-md);
+}
+
+/* Tipos de movimiento - Badges compactos */
+.tipo-movimiento {
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--radio-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+}
+
+.tipo-movimiento.entrada {
+    background: #d4edda;
+    color: #155724;
+}
+
+.tipo-movimiento.salida {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.tipo-movimiento.ajuste {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* Cantidades con indicadores visuales */
+.cantidad {
+    font-weight: 600;
+    text-align: right;
+    font-family: 'Courier New', monospace;
+}
+
+.cantidad.positiva {
+    color: var(--exito);
+}
+
+.cantidad.negativa {
+    color: var(--peligro);
+}
+
+.cantidad.positiva::before {
+    content: "+";
+}
+
+.cantidad.negativa::before {
+    content: "-";
+}
+
+/* Fechas compactas */
+.fecha-movimiento {
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.fecha-movimiento .fecha {
+    font-weight: 600;
+    color: var(--texto-oscuro);
+}
+
+.fecha-movimiento .hora {
+    color: var(--texto-secundario);
+    font-size: 0.8rem;
+}
+
+/* Estadísticas específicas de movimientos */
+.estadisticas-movimientos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--espacio-md);
+    margin-bottom: var(--espacio-lg);
+}
+
+.carta-movimiento {
+    background: white;
+    border-radius: var(--radio-md);
+    box-shadow: var(--sombra-suave);
+    padding: var(--espacio-md);
+    text-align: center;
+    border: 1px solid var(--borde-claro);
+}
+
+.carta-movimiento h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--espacio-xs);
+}
+
+.carta-movimiento.entradas h3 {
+    color: var(--exito);
+}
+
+.carta-movimiento.salidas h3 {
+    color: var(--peligro);
+}
+
+.carta-movimiento.neto h3 {
+    color: var(--info);
+}
+
+.carta-movimiento p {
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Vista previa compacta */
+.vista-previa-movimiento {
+    background: var(--fondo-gris-claro);
+    border-radius: var(--radio-md);
+    padding: var(--espacio-md);
+    margin: var(--espacio-md) 0;
+    border: 1px solid var(--borde-gris);
+}
+
+.vista-previa-movimiento h3 {
+    margin: 0 0 var(--espacio-sm) 0;
+    color: var(--texto-oscuro);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.grid-vista-previa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--espacio-sm);
+}
+
+.item-vista-previa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espacio-xs) 0;
+    border-bottom: 1px solid var(--borde-claro);
+    font-size: 0.9rem;
+}
+
+.item-vista-previa:last-child {
+    border-bottom: none;
+}
+
+.etiqueta-vista-previa {
+    font-weight: 600;
+    color: var(--texto-oscuro);
+}
+
+.valor-vista-previa {
+    color: var(--texto-secundario);
+}
+
+/* Información de resultados */
+.resultados-info {
+    margin-bottom: var(--espacio-md);
+    padding: var(--espacio-sm) 0;
+    border-bottom: 1px solid var(--borde-claro);
+}
+
+.resultados-info p {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Responsive optimizado */
+@media (max-width: 768px) {
+    .tabla-info, .tabla-movimientos {
+        font-size: 0.8rem;
+    }
+    
+    .tabla-info th, .tabla-info td,
+    .tabla-movimientos th, .tabla-movimientos td {
+        padding: var(--espacio-xs) var(--espacio-sm);
+    }
+    
+    .grid-vista-previa {
+        grid-template-columns: 1fr;
+    }
+    
+    .estadisticas-movimientos {
+        grid-template-columns: 1fr;
+        gap: var(--espacio-sm);
+    }
+    
+    .carta-movimiento {
+        padding: var(--espacio-sm);
+    }
+    
+    .carta-movimiento h3 {
+        font-size: 1.2rem;
+    }
+    
+    .tipo-movimiento {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.3rem;
+        min-width: 50px;
+    }
+}
+
+/* Tipos de movimiento - badges compactos */
+.tipo-movimiento {
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--radio-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+}
+
+.tipo-movimiento.entrada {
+    background: #d4edda;
+    color: #155724;
+}
+
+.tipo-movimiento.salida {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.tipo-movimiento.ajuste {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* Cantidades con indicadores visuales */
+.cantidad {
+    font-weight: 600;
+    text-align: right;
+    font-family: 'Courier New', monospace;
+}
+
+.cantidad.positiva {
+    color: var(--exito);
+}
+
+.cantidad.negativa {
+    color: var(--peligro);
+}
+
+.cantidad.positiva::before {
+    content: "+";
+}
+
+.cantidad.negativa::before {
+    content: "-";
+}
+
+/* Fechas compactas */
+.fecha-movimiento {
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.fecha-movimiento .fecha {
+    font-weight: 600;
+    color: var(--texto-oscuro);
+}
+
+.fecha-movimiento .hora {
+    color: var(--texto-secundario);
+    font-size: 0.8rem;
+}
+
+/* Estadísticas compactas */
+.estadisticas-movimientos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--espacio-md);
+    margin-bottom: var(--espacio-lg);
+}
+
+.carta-movimiento {
+    background: white;
+    border-radius: var(--radio-md);
+    box-shadow: var(--sombra-suave);
+    padding: var(--espacio-md);
+    text-align: center;
+    border: 1px solid var(--borde-claro);
+}
+
+.carta-movimiento h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--espacio-xs);
+}
+
+.carta-movimiento.entradas h3 {
+    color: var(--exito);
+}
+
+.carta-movimiento.salidas h3 {
+    color: var(--peligro);
+}
+
+.carta-movimiento.neto h3 {
+    color: var(--info);
+}
+
+.carta-movimiento p {
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Vista previa compacta */
+.vista-previa-movimiento {
+    background: var(--fondo-gris-claro);
+    border-radius: var(--radio-md);
+    padding: var(--espacio-md);
+    margin: var(--espacio-md) 0;
+    border: 1px solid var(--borde-gris);
+}
+
+.vista-previa-movimiento h3 {
+    margin: 0 0 var(--espacio-sm) 0;
+    color: var(--texto-oscuro);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.grid-vista-previa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--espacio-sm);
+}
+
+.item-vista-previa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espacio-xs) 0;
+    border-bottom: 1px solid var(--borde-claro);
+    font-size: 0.9rem;
+}
+
+.item-vista-previa:last-child {
+    border-bottom: none;
+}
+
+.etiqueta-vista-previa {
+    font-weight: 600;
+    color: var(--texto-oscuro);
+}
+
+.valor-vista-previa {
+    color: var(--texto-secundario);
+}
+
+/* Acciones rápidas */
+.acciones-rapidas {
+    background: white;
+    border-radius: var(--radio-md);
+    box-shadow: var(--sombra-suave);
+    border: 1px solid var(--borde-claro);
+    padding: var(--espacio-lg);
+    margin-bottom: var(--espacio-lg);
+}
+
+.acciones-rapidas h2 {
+    margin: 0 0 var(--espacio-md) 0;
+    color: var(--texto-oscuro);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.acciones-rapidas .accion-btn {
+    margin-right: var(--espacio-md);
+    margin-bottom: var(--espacio-sm);
+}
+
+/* Responsive optimizado */
+@media (max-width: 768px) {
+    .estadisticas-grid {
+        grid-template-columns: 1fr;
+        gap: var(--espacio-md);
+    }
+    
+    .estadisticas-carta {
+        padding: var(--espacio-md);
+    }
+    
+    .estadisticas-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .tabla-info, .tabla-movimientos {
+        font-size: 0.8rem;
+    }
+    
+    .tabla-info th, .tabla-info td,
+    .tabla-movimientos th, .tabla-movimientos td {
+        padding: var(--espacio-xs) var(--espacio-sm);
+    }
+    
+    .grid-vista-previa {
+        grid-template-columns: 1fr;
+    }
+    
+    .estadisticas-movimientos {
+        grid-template-columns: 1fr;
+        gap: var(--espacio-sm);
+    }
+    
+    .carta-movimiento {
+        padding: var(--espacio-sm);
+    }
+    
+    .carta-movimiento h3 {
+        font-size: 1.2rem;
+    }
+    
+    .tipo-movimiento {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.3rem;
+        min-width: 50px;
+    }
+    
+    .acciones-rapidas .accion-btn {
+        margin-right: var(--espacio-sm);
+        margin-bottom: var(--espacio-xs);
+    }
+}

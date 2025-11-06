@@ -1,0 +1,204 @@
+/* ===== ESTILOS ESPECÍFICOS DE CATEGORÍAS - DEPURADO ===== */
+
+/* Grid de categorías */
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--espacio-lg);
+}
+
+/* Carta de categoría */
+.categorias-carta {
+    background: var(--fondo-blanco);
+    border: 1px solid var(--borde-claro);
+    border-radius: var(--radio-md);
+    padding: var(--espacio-lg);
+    transition: all 0.2s ease;
+    box-shadow: var(--sombra-suave);
+}
+
+.categorias-carta:hover {
+    box-shadow: var(--sombra-media);
+    border-color: var(--borde-gris);
+    transform: translateY(-2px);
+}
+
+.categoria-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--espacio-md);
+    padding-bottom: var(--espacio-sm);
+    border-bottom: 1px solid var(--borde-claro);
+}
+
+.categoria-cabecera h3 {
+    color: var(--texto-oscuro);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.categoria-acciones {
+    display: flex;
+    gap: var(--espacio-sm);
+}
+
+.categoria-info {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+.categoria-info p {
+    margin: 0.25rem 0;
+}
+
+/* Tabla de categorías */
+.tabla-categorias {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: var(--radio-md);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid var(--borde-claro);
+}
+
+.tabla-categorias th {
+    background: var(--fondo-gris-claro);
+    color: var(--texto-oscuro);
+    font-weight: 600;
+    padding: var(--espacio-md);
+    text-align: left;
+    border-bottom: 2px solid var(--borde-gris);
+}
+
+.tabla-categorias td {
+    padding: var(--espacio-md);
+    border-bottom: 1px solid var(--borde-claro);
+}
+
+.tabla-categorias tbody tr:hover {
+    background: var(--fondo-gris-claro);
+}
+
+/* Acciones de tabla */
+.acciones-tabla {
+    display: flex;
+    gap: var(--espacio-sm);
+    align-items: center;
+}
+
+.btn-accion-tabla, .btn-editar, .btn-eliminar {
+    padding: var(--espacio-xs) var(--espacio-sm);
+    border: none;
+    border-radius: var(--radio-sm);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.btn-editar {
+    background: var(--info);
+    color: white;
+}
+
+.btn-editar:hover {
+    background: #3a7bd5;
+    transform: translateY(-1px);
+}
+
+.btn-eliminar {
+    background: var(--peligro);
+    color: white;
+}
+
+.btn-eliminar:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Formulario de categorías */
+.formulario-categoria {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.grupo-categoria {
+    margin-bottom: var(--espacio-lg);
+}
+
+.grupo-categoria label {
+    display: block;
+    margin-bottom: var(--espacio-xs);
+    font-weight: 600;
+    color: var(--texto-oscuro);
+}
+
+.grupo-categoria input {
+    width: 100%;
+    padding: var(--espacio-sm) var(--espacio-md);
+    border: 1px solid var(--borde-gris);
+    border-radius: var(--radio-sm);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.grupo-categoria input:focus {
+    outline: none;
+    border-color: var(--primario);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Mensajes */
+.mensaje {
+    padding: var(--espacio-md);
+    border-radius: var(--radio-sm);
+    margin-bottom: var(--espacio-md);
+    border-left: 4px solid;
+}
+
+.mensaje.exito {
+    background: #d4edda;
+    color: #155724;
+    border-left-color: var(--exito);
+}
+
+.mensaje.error {
+    background: #f8d7da;
+    color: #721c24;
+    border-left-color: var(--peligro);
+}
+
+.mensaje.info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border-left-color: var(--info);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tabla-categorias {
+        font-size: 0.9rem;
+    }
+    
+    .tabla-categorias th,
+    .tabla-categorias td {
+        padding: var(--espacio-sm);
+    }
+    
+    .acciones-tabla {
+        flex-direction: column;
+        gap: var(--espacio-xs);
+    }
+    
+    .btn-accion-tabla {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+}

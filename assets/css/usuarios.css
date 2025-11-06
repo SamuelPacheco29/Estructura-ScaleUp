@@ -1,0 +1,147 @@
+/* Estilos para Gestión de Usuarios */
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-admin {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+.badge-worker {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.form-cambiar-rol {
+    display: inline-block;
+}
+
+.select-rol {
+    padding: 6px 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.select-rol:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.select-rol:hover {
+    border-color: #4a90e2;
+}
+
+.text-muted {
+    color: #6c757d;
+    font-style: italic;
+}
+
+.protegido-label {
+    color: #856404;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* Estilos de la tabla */
+.datos-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.datos-tabla thead {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+.datos-tabla thead th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.datos-tabla tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.datos-tabla tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.datos-tabla tbody tr:last-child {
+    border-bottom: none;
+}
+
+.datos-tabla tbody td {
+    padding: 12px 15px;
+    font-size: 14px;
+}
+
+.datos-tabla tbody td:first-child {
+    font-weight: 600;
+    color: #4a90e2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .datos-tabla {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .datos-tabla thead,
+    .datos-tabla tbody,
+    .datos-tabla tr,
+    .datos-tabla td,
+    .datos-tabla th {
+        display: block;
+    }
+    
+    .datos-tabla thead {
+        display: none;
+    }
+    
+    .datos-tabla tr {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        padding: 10px;
+    }
+    
+    .datos-tabla td {
+        border: none;
+        padding: 8px;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+    
+    .datos-tabla td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 8px;
+        font-weight: 600;
+        text-align: left;
+    }
+}
+
